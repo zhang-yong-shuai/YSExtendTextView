@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "YSExtendTextView.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 200, 100)];
+    [self.view addSubview:contentView];
+    contentView.backgroundColor = [UIColor lightGrayColor];
+    
+    YSExtendTextView *textView = [YSExtendTextView new];
+    textView.frame = CGRectMake(15, 5, 170, 90);
+    textView.extendDirection = YSTextViewExtendDirectionDownside;
+    textView.placeholder = @"请输入文字～";
+    [contentView addSubview:textView];
 }
 
 

@@ -13,6 +13,7 @@
 		522CA92C1DD02DF20037D19B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 522CA92A1DD02DF20037D19B /* Main.storyboard */; };
 		522CA92E1DD02DF20037D19B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 522CA92D1DD02DF20037D19B /* Assets.xcassets */; };
 		522CA9311DD02DF20037D19B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 522CA92F1DD02DF20037D19B /* LaunchScreen.storyboard */; };
+		522CA93B1DD02E360037D19B /* YSExtendTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 522CA93A1DD02E360037D19B /* YSExtendTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		522CA92D1DD02DF20037D19B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		522CA9301DD02DF20037D19B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		522CA9321DD02DF20037D19B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		522CA9391DD02E360037D19B /* YSExtendTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSExtendTextView.h; sourceTree = "<group>"; };
+		522CA93A1DD02E360037D19B /* YSExtendTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSExtendTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 		522CA9201DD02DF20037D19B /* YSExtendTextViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				522CA9381DD02E360037D19B /* ExtendTextView */,
 				522CA9241DD02DF20037D19B /* AppDelegate.h */,
 				522CA9251DD02DF20037D19B /* AppDelegate.m */,
 				522CA9271DD02DF20037D19B /* ViewController.h */,
@@ -77,6 +81,15 @@
 				522CA9221DD02DF20037D19B /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		522CA9381DD02E360037D19B /* ExtendTextView */ = {
+			isa = PBXGroup;
+			children = (
+				522CA9391DD02E360037D19B /* YSExtendTextView.h */,
+				522CA93A1DD02E360037D19B /* YSExtendTextView.m */,
+			);
+			path = ExtendTextView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				522CA9291DD02DF20037D19B /* ViewController.m in Sources */,
+				522CA93B1DD02E360037D19B /* YSExtendTextView.m in Sources */,
 				522CA9261DD02DF20037D19B /* AppDelegate.m in Sources */,
 				522CA9231DD02DF20037D19B /* main.m in Sources */,
 			);
