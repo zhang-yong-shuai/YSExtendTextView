@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "YSExtendTextView.h"
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDataSource>
 
 @end
 
@@ -18,16 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 200, 100)];
-    [self.view addSubview:contentView];
-    contentView.backgroundColor = [UIColor lightGrayColor];
-    
-    YSExtendTextView *textView = [YSExtendTextView new];
-    textView.frame = CGRectMake(15, 5, 170, 90);
-    textView.extendDirection = YSTextViewExtendFromTop;
-    textView.placeholder = @"请输入文字～";
-    [contentView addSubview:textView];
 }
 
 
@@ -36,5 +26,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 2;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"InputCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        
+        // create textView
+        CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+        YSExtendTextView *textView = [YSExtendTextView new];
+        textView.frame = CGRectMake(15.f, 5.f, screenWidth-30.f, 66.f-10.f);
+        //textView.extendDirection = YSTextViewExtendFromTop;
+        textView.placeholder = @"请输入文字～";
+        [cell.contentView addSubview:textView];
+    }
+    return cell;
+}
 
 @end
