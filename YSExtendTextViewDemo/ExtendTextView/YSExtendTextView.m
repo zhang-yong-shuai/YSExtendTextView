@@ -41,7 +41,7 @@
 #pragma mark - configure
 - (void)configure {
     self.isExtending = YES;
-    self.extendDirection = YSTextViewExtendDirectionBothsides;
+    self.extendDirection = YSTextViewExtendFromCenter;
     self.backgroundColor = [UIColor clearColor];
     [self addObservers];
 }
@@ -66,14 +66,14 @@
     if (self.textView.contentSize.height < self.bounds.size.height) {
         CGRect rect = self.bounds;
         switch (self.extendDirection) {
-            case YSTextViewExtendDirectionBothsides:
+            case YSTextViewExtendFromCenter:
                 rect.origin.y = (rect.size.height - self.textView.contentSize.height) / 2.f;
                 break;
-            case YSTextViewExtendDirectionUpside:
-                rect.origin.y = rect.size.height - self.textView.contentSize.height;
-                break;
-            case YSTextViewExtendDirectionDownside:
+            case YSTextViewExtendFromTop:
                 rect.origin.y = 0;
+                break;
+            case YSTextViewExtendFromBottom:
+                rect.origin.y = rect.size.height - self.textView.contentSize.height;
                 break;
         }
         rect.size.height = self.textView.contentSize.height;
@@ -94,8 +94,7 @@
         [self addSubview:_textView];
         _textView.delegate = self;
         _textView.font = kTextViewFont;
-#warning test border
-        _textView.layer.borderColor = [UIColor blackColor].CGColor;
+        _textView.layer.borderColor = [UIColor lightGrayColor].CGColor;
         _textView.layer.borderWidth = 1.f;
         _textView.layer.cornerRadius = 4.f;
     }

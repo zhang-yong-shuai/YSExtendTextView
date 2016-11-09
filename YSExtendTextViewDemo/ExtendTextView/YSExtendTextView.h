@@ -14,9 +14,10 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, YSTextViewExtendDirection) {
-    YSTextViewExtendDirectionBothsides = 0,// 向两侧延伸
-    YSTextViewExtendDirectionUpside,       // 向上延伸
-    YSTextViewExtendDirectionDownside      // 向下延伸
+    YSTextViewExtendFromCenter = 0,// 从中间向上下延伸
+    YSTextViewExtendFromTop,       // 从顶部向下延伸
+    YSTextViewExtendFromBottom,    // 从底部向上延伸
+    
 };
 
 @interface YSExtendTextView : UIView

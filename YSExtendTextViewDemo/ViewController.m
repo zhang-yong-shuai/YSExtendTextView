@@ -25,7 +25,7 @@
     
     YSExtendTextView *textView = [YSExtendTextView new];
     textView.frame = CGRectMake(15, 5, 170, 90);
-    textView.extendDirection = YSTextViewExtendDirectionDownside;
+    textView.extendDirection = YSTextViewExtendFromTop;
     textView.placeholder = @"请输入文字～";
     [contentView addSubview:textView];
 }
